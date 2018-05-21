@@ -3,4 +3,32 @@
 // for SS locators, see $$ and for xpath $x'
 // Code begins from here
 
-Sample SS locatore : $$"(//input[@id=abc])"
+Sample SS locatore : $$("input[id='abc']")
+
+
+Xpaths
+
+$x("//button[@title = 'Create New Patient(Manual)']")
+$x("//button[@title = 'Create New Patient(Manual)'][@type = 'button']")
+$x("//button[starts-with(@title, 'Create New')]")
+$x("//button[substring(@type, 2)='utton']")
+$x("//button[substring(@title, 26,29)='CDA']")
+$x("//title[normalize-space(text()='selenium - Google Search')]")
+$x("//button[contains(@id, 'awv_PrintSummary_2')]")
+$x("//button[@id = 'awv_PrintSummary_2'][text()='Print Report for Provider']")
+$x("//button[text()='Print Report for Provider']")
+$x("//span[@class = 'ng-binding ng-hide' ]/following-sibling :: a[text()='0-5 minutes']")
+$x("//span[@class = 'ng-binding' ][text() ='0-5 minutes']")
+$x("//button[contains(@title, 'Create')][2]")  To select one from the multiple results
+$x("//button[contains(@title, 'Create')]/..")    this is for the parent element
+$x("//button[contains(@title, 'Create')]/parent :: div")     parent element
+$x("//button[contains(@title, 'Create')]/../../..")                Parent of parent
+$x("//button[contains(@title, 'Create')]/../../following-sibling :: div")
+$x("//span[text()= '10-15 minutes']/preceding-sibling :: div") preceding siblings
+$x("//span[text()= '10-15 minutes']/preceding-sibling :: *")  preceding siblings if only one is there
+
+
+SS Locators
+$$("button[title='Create New Patient(Manual)']")
+$$("button[title='Create New Patient(Manual)'][type='button']")
+$$("button[title *= 'Manual)']")       *= is equal to contains
